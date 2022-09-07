@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,700;1,900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+@import url("./baskvl-webfont/stylesheet.css"); /*
+0-600px:    Phone
+600-900px:    Tablet
+900-1200px:  Tablet Landscape
+1200-1800px: Normal Style (Desktop)
+
+1800+px: Big Screen
+
+*/
+/*
+
+$breakpoint argument choices:
+-phone
+-tab
+-tab-land
+-big-desktop
+
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6,
+a p {
+  cursor: pointer !important;
+  width: fit-content;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+button:focus {
+  background-color: transparent;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (min-width: 980px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.homepage {
+  padding: 3rem 0;
+}
+.homepage .menu {
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .menu button {
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  width: 150px;
+  font-weight: 700;
+  background-color: transparent;
+  border: 2px solid #979797;
+  border-radius: 4px;
+}
+.homepage .menu button:focus {
+  border: 2px solid #979797;
+}
+.homepage .menu button:not(:last-child) {
+  margin-right: 2rem;
+}
+.homepage .menu button.active {
+  border-color: #1797ff;
+  color: #1797ff;
+  transition: border-color color ease 0.6s;
+}
+.homepage .select-news-category {
+  margin-bottom: 4rem;
+  max-width: 40%;
+}
+@media (max-width: 600px) {
+  .homepage .select-news-category {
+    max-width: 100%;
+  }
+}
+.homepage .select-news-category [class*=control] {
+  padding: 10px;
+}
+.homepage .select-news-category .select-custom-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.homepage .select-news-category .select-custom-option span {
+  font-size: 1.2rem;
+}
+.homepage .select-news-category .select-custom-option img {
+  height: 24px;
+  margin-right: 1rem;
+}
+.homepage .news-feed-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 4rem;
+  grid-row-gap: 2rem;
+}
+@media (max-width: 900px) {
+  .homepage .news-feed-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 2rem;
+  }
+}
+.homepage .news-feed-container .news-feed-card {
+  border: 1px solid #979797;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.homepage .news-feed-container .news-feed-card a {
+  display: block;
+  text-decoration: none;
+  color: unset;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  width: 100%;
+}
+.homepage .news-feed-container .news-feed-card .post-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.homepage .news-feed-container .news-feed-card .post-time p {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+.homepage .news-feed-container .news-feed-card .post-time svg {
+  margin-right: 1rem;
+}
+.homepage .news-feed-container .news-feed-card .favorite-icon {
+  background-color: rgba(107, 107, 107, 0.3215686275);
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.homepage .news-feed-container .news-feed-card .favorite-icon button {
+  padding: 1rem 3rem;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.homepage .news-feed-container .news-feed-card .favorite-icon button svg {
+  font-size: 3rem;
+  fill: #dd0031;
+}
+.homepage .news-feed-container .news-feed-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #767676;
+}
+.homepage .news-feed-container .news-feed-card h2 {
+  font-size: 1.5rem;
+  color: #6b6b6b;
+  cursor: pointer;
+}
+.homepage .news-feed-container .pagination-container {
+  display: flex;
+  justify-content: center;
+}
+.homepage .pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: 1.5rem;
+  margin-top: 4rem;
+}
+.homepage .pagination .page-item {
+  border: 1px solid #979797;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+.homepage .pagination .page-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.homepage .pagination .page-item:not(:last-child) {
+  margin-right: 1rem;
+}
+.homepage .pagination .page-item.active {
+  background-color: #1797ff;
+  border-color: transparent;
+  color: #fff;
+}
+.homepage .fullpage-preloader {
+  display: flex;
+}
+.homepage .fullpage-preloader .left-side {
+  flex-grow: 4;
+  flex-basis: 0;
+  margin-right: 1rem;
+}
+.homepage .fullpage-preloader .right-side {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.homepage .fullpage-preloader .right-side span {
+  height: 100%;
+}
+.homepage .fullpage-preloader .skeleton {
+  z-index: auto !important;
+}
+.homepage .fullpage-preloader .skeleton-1 {
+  margin-bottom: 0.5rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.homepage .fullpage-preloader .skeleton-2 {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.homepage .fullpage-preloader .skeleton-3 {
+  border-radius: 8px;
+}
+.homepage .fullpage-preloader div {
+  width: 100%;
+}
+.homepage .preloader-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 4rem;
+  grid-row-gap: 2rem;
+}
+@media (max-width: 900px) {
+  .homepage .preloader-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 2rem;
+  }
+}
+
+.header {
+  padding: 1.5rem 0;
+  box-shadow: 0px 4px 12px -1px rgba(99, 99, 99, 0.5);
+  -webkit-box-shadow: 0px 4px 12px -1px rgba(99, 99, 99, 0.5);
+  -moz-box-shadow: 0px 4px 12px -1px rgba(99, 99, 99, 0.5);
+}
+.header a {
+  max-width: fit-content;
+}
+.header h1 {
+  font-family: baskervillenormal;
+  font-size: 3rem;
+}/*# sourceMappingURL=main.css.map */
